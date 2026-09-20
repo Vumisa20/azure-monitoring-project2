@@ -1,0 +1,4 @@
+Syslog
+| where Facility == "authpriv"
+| where SyslogMessage has "Failed password"
+| summarize FailedLogins = count()

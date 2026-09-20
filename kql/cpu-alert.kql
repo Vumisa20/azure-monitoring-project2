@@ -1,0 +1,5 @@
+Perf
+| where TimeGenerated > ago(5m)
+| where ObjectName == "Processor"
+| where CounterName == "% Processor Time"
+| summarize AvgCPU = avg(CounterValue)

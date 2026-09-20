@@ -1,0 +1,5 @@
+Perf
+| where TimeGenerated > ago(5m)
+| where ObjectName == "Logical Disk"
+| where CounterName == "% Used Space"
+| summarize AvgDiskUsed = avg(CounterValue)
